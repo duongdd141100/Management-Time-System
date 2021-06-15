@@ -1,0 +1,131 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+.report {
+    margin: 2rem 20%;
+
+}
+.overview {
+    display: flex;
+    border: 1px solid #ccc;
+    background-color: #ccc;
+    height: 40px;
+}
+.parameters {
+    display: flex;
+    
+}
+.overview {
+    display: flex;
+    justify-content: space-between;
+}
+.parameters {
+    /*padding-right: 20px;*/
+    padding-top: 10px;
+}
+#timeAccepted {
+    color: rgb(89, 177, 81);
+    font-weight: bold;
+    padding-right: 5px;
+   
+}
+#timNotAccepted {
+    color: #fcd703;
+    font-weight: bold;
+    padding-right: 5px;
+}
+#timeReject {
+    color: red;
+    font-weight: bold;
+    padding-right: 5px;
+}
+p {
+    padding-top: 10px;
+    padding-left: 20px;
+    margin: 0;
+    font-weight: bold;
+}
+.overview {
+    display: flex;
+}
+table{
+    border: 1px solid #ccc;
+    border-top: none;
+    width: 100%;
+    margin-bottom: 15px;
+}
+th, td, tr {
+    text-align: center;
+}
+
+#accepted {
+    color: rgb(89, 177, 81);
+    font-weight: bold;
+}
+#processing {
+    color: #fcd703;
+    font-weight: bold;
+}
+#reject {
+    color: red;
+    font-weight: bold;
+}
+tr{ 
+    height: 35px;
+}
+#pager a {
+    text-decoration: none;
+    padding: 2px;
+    border: 1px solid graytext;
+    margin: 3px;
+    color: background;
+    background-color: aliceblue;
+}
+#pager span {
+    text-decoration: none;
+    padding: 2px;
+    border: 1px solid graytext;
+    margin: 3px;
+    color: background;
+    background-color: antiquewhite;
+}
+#pager a:hover {
+    background-color: antiquewhite;
+}
+#seach {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+#seach .inputDate {
+    border: 1px solid #ccc;
+    height: 30px;
+    border-radius: 5px;
+    width: 150px;
+}
+#buttonFind {
+    background-color: #3399ff; 
+    border: 1px solid #3399ff;
+    height: 30px;
+    border-radius: 3px;
+}
+#buttonFind:hover {
+    background-color: #4da6ff;
+}
+#monthFind{
+    margin: 8px 0px;
+}
+#monthFind a{
+    border: 1px solid #ccc;
+    background-color: #00b300;
+    height: 20px;
+    width: 40px;
+    border-radius: 50px;
+}
+#monthFind a:hover {
+    color: inherit;
+    background-color: #00cc00;
+    
+}

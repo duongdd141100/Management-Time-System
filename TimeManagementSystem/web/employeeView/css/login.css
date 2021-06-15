@@ -1,0 +1,73 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+#loginForm {
+    margin: auto;
+    align-content: center;
+    border: 1px solid #ccc;
+    justify-items:  center;
+    padding: 10px;  
+    width: 400px;
+    text-align: center;
+}
+p {
+    text-align: left;
+}
+form {
+    padding: 20px;
+    padding-top: 5px;
+    font-weight: bold;
+}
+h3 {
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    margin:auto;
+}
+input {
+    height: 1.8rem;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+    width: 21.5rem;
+    background-color: #f2f2f2;
+}
+button {
+    background: #4da6ff;
+    height: 2rem;
+    width: 5rem;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    margin-top: 10px;
+}
+p {
+    margin: 5px;
+}
+.login {
+    margin: auto;
+    
+}
+.title {
+    border: 1px solid #ccc;
+    border-bottom: none;
+    width: 420px;
+    margin: auto;
+}
+
+.timeKeeping {
+    /* margin: 0; */
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-top: none;
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 50px;
+    background-color: #ccc;
+    
+}
+h4 {
+    margin: auto;
+    padding: 10px 10px 30px 10px;
+}
+#labelErr {
+    color: red;
+}

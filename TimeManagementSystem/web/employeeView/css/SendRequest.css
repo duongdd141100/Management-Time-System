@@ -1,0 +1,50 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+.request {
+    border: 1px solid #cccccc;
+    margin: 2rem 15%;
+    border-radius: 5px;
+    
+}
+.detail div {
+    padding-bottom: 1rem;
+}
+h3 {
+    margin: 0;
+    padding: 10px 0 20px 10px;
+}
+.title {
+    border-bottom: 1px solid #ccc;
+    background-color: #ccc;
+    height: 3rem;
+}
+
+textarea {
+    width: 100%;
+}
+
+.detail {
+    padding: 0 2rem;
+}
+p {
+    margin:0;
+    padding: 0.5rem 0;
+    padding-bottom: 0.5rem;
+}
+select {
+    width:100%;
+    height: 2rem;
+}
+input {
+    width: 100%;
+    height: 2rem;
+}
+#submit {
+    background-color: #00e600;
+    border: 1px solid #00e600;
+    width: 5rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}

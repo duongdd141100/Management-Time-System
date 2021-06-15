@@ -1,0 +1,125 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+h4 {
+    color: #00e600;
+    text-align: center;
+}
+
+.title {
+    
+    border: 1px solid #ccc;
+    margin: 0px 10%;
+    border-bottom: 1px solid #ccc;
+    background-color: #e6e6e6;
+    margin-top: 50px;
+}
+
+h3 {
+    padding: 10px 0 20px 10px;
+    margin: 0;
+}
+p {
+    padding-left: 20px;
+}
+#table {
+    border: 1px solid #ccc;
+    margin: 0px 10%;
+    border-top: none;
+}
+table{
+
+    border-top: none;
+    width: 100%;
+    margin-bottom: 15px;
+    border-spacing: 15px;
+}
+th, td, tr {
+    text-align: center;
+}
+table a {
+    cursor: pointer;
+    border: 1px solid #ccc;
+    padding: 2px;
+    border-radius: 3px;
+}
+#edit {
+    background-color: #1a8cff;
+}
+#delete {
+    background-color: #e62e00;
+}
+#view {
+    background-color: #00e600;
+}
+#sendEmail {
+    background-color: #99ccff;
+}
+
+#edit:hover {
+    background-color: #3399ff;
+    color: black;
+}
+#delete:hover {
+    background-color: #ff3300;
+    color: black;
+}
+#view:hover {
+    background-color: #00ff00;
+    color: black;
+}
+#sendEmail:hover {
+    background-color: #b3d9ff;
+    color: black;
+}
+#accepted {
+    color: rgb(89, 177, 81);
+    font-weight: bold;
+}
+#processing {
+    color: #fcd703;
+    font-weight: bold;
+}
+#reject {
+    color: red;
+    font-weight: bold;
+}
+#buttonAccept, #buttonReject {
+    width: 60px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgb(89, 212, 81);
+    cursor: pointer;
+}
+#buttonReject {
+    background-color: red;
+}
+#buttonAccept:hover {
+    background-color: rgb(89, 200, 81);
+}
+#buttonReject:hover {
+    background-color: #ff3333;
+}
+#pager a {
+    text-decoration: none;
+    padding: 2px;
+    border: 1px solid graytext;
+    margin: 3px;
+    color: background;
+    background-color: aliceblue;
+}
+#pager span {
+    text-decoration: none;
+    padding: 2px;
+    border: 1px solid graytext;
+    margin: 3px;
+    color: background;
+    background-color: antiquewhite;
+}
+#pager a:hover {
+    background-color: antiquewhite;
+}
+#pager {
+    margin: 10px;
+}

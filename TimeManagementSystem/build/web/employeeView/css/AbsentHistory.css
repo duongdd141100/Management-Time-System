@@ -1,0 +1,104 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+.history {
+    margin: 2rem 20%;
+
+}
+.title {
+    display: flex;
+    border: 1px solid #ccc;
+    background-color: #ccc;
+    height: 40px;
+}
+
+p {
+    padding-top: 10px;
+    padding-left: 20px;
+    margin: 0;
+    font-weight: bold;
+}
+.title {
+    display: flex;
+}
+table{
+    border: 1px solid #ccc;
+    border-top: none;
+    width: 100%;
+    margin-bottom: 10px; 
+}
+th, td, tr {
+    text-align: center;
+}
+
+#accepted {
+    color: rgb(89, 177, 81);
+    font-weight: bold;
+}
+#processing {
+    color: #ffd633;
+    font-weight: bold;
+}
+#reject {
+    font-weight: bold;
+    color: red;
+}
+tr{ 
+    height: 35px;
+}
+#seach {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+#seach .inputDate {
+    border: 1px solid #ccc;
+    height: 30px;
+    border-radius: 5px;
+    width: 150px;
+}
+#buttonFind {
+    background-color: #3399ff; 
+    border: 1px solid #3399ff;
+    height: 30px;
+    border-radius: 3px;
+}
+#buttonFind:hover {
+    background-color: #4da6ff;
+}
+#monthFind{
+    margin: 8px 0px;
+}
+#monthFind a{
+    border: 1px solid #ccc;
+    background-color: #00b300;
+    height: 20px;
+    width: 40px;
+    border-radius: 50px;
+}
+#monthFind a:hover {
+    color: inherit;
+    background-color: #00cc00;
+    
+}
+#pager a {
+    text-decoration: none;
+    padding: 2px;
+    border: 1px solid graytext;
+    margin: 3px;
+    color: background;
+    background-color: aliceblue;
+}
+#pager span {
+    text-decoration: none;
+    padding: 2px;
+    border: 1px solid graytext;
+    margin: 3px;
+    color: background;
+    background-color: antiquewhite;
+}
+#pager a:hover {
+    background-color: antiquewhite;
+}

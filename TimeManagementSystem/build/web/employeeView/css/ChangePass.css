@@ -1,0 +1,54 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+.changePassForm {
+    border: 1px solid #ccc;
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: center;
+    padding: 0px 20px;
+}
+
+.changePassForm p{
+    padding-bottom: 10px;
+    margin: 0;
+    text-align: left;
+    font-weight: bold;
+    font-size: 17px;
+}
+.changePassForm div {
+    padding-top: 15px;
+}
+.changePassForm div input {
+    width: 100%;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    text-align: left;
+}
+#email {
+    background-color: #ccc;
+    cursor: auto;
+}
+
+#save {
+    margin: 20px;
+    background-color: #3385ff;
+    height: 2rem;
+    border: 1px solid #3385ff;
+    border-radius: 3px;
+    width: 8rem;
+    cursor: pointer;
+}
+
+.titleChangePass {
+    border: 1px solid #ccc;
+    margin: 0 20%;
+    border-bottom: none;
+    background-color: #ccc;
+}
+h3 {
+    padding-left: 2rem;
+}

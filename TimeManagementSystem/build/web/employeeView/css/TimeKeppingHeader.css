@@ -1,0 +1,44 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+.option {
+    display: flex;
+    background-color: #ccc;
+    padding: 20px;
+}
+
+
+.optionRight{
+    position: absolute;
+    right: 0px;
+    padding-right: 20px;
+}
+.optionRight a{
+    margin-right: 20px;
+}
+.optionLeft{
+    text-align: left;
+}
+
+a {
+    text-decoration: none;
+    color: #333333;
+    padding: 10px;
+    cursor: pointer;
+}
+a:hover{
+    color: #ffaa00;
+}
+
+#logout {
+    background-color: tomato;
+    border-radius: 5px;
+}
+#request {
+    background-color: aquamarine;
+    border-radius: 5px;
+
+}
+.password {
+    cursor: pointer;
+}

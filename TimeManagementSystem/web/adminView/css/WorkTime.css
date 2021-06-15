@@ -1,0 +1,64 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+input {
+    border: none;
+    text-align: center;
+    outline: none;
+    width: 100%;
+    font-size: 18px;
+}
+
+.buttonDelete, .buttonEdit, .buttonSave {
+    border: 1px solid #ccc;
+    background-color: #00cc00;
+    height: 25px;
+    width: 50px;
+    border-radius: 5px;
+    
+}
+.buttonDelete {
+    background-color: red;
+}
+.buttonSave {
+    display: none;
+    background-color: #0066ff;
+}
+.action {
+    display: flex;
+    justify-content: center;
+}
+button {
+    cursor: pointer;
+    margin: 3px 5px;
+}
+#table, .title {
+    margin: 0px 20%;
+}
+#detail {
+    padding-top: 50px;
+}
+#divAdd {
+    display: flex;
+    justify-content: flex-end;
+}
+#buttonAdd {
+    background: url(../../employeeView/icons/add.png);
+    background-repeat: no-repeat;
+    width: 36px;
+    height: 36px;
+    border: none;
+    margin: 10px;
+}
+#trAdd {
+    display: none;
+}
+#saveAdd {
+    height: 25px;
+    width: 50px;
+    font-size: inherit;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #0066ff;
+}

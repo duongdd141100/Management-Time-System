@@ -1,0 +1,86 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+#report {
+    
+    margin: 40px 10%;
+}
+#title {
+    background-color: #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+}
+#title p {
+    font-weight: bold;
+}
+#title div {
+    padding: 15px;
+}
+#detail {
+    border: 1px solid #ccc;
+}
+table {
+    width: 100%;
+    border-spacing: 15px;
+    text-align: center;
+}
+#accepted {
+    color: rgb(89, 177, 81);
+    font-weight: bold;
+}
+#processing {
+    color: #fcd703;
+    font-weight: bold;
+}
+#reject {
+    color: red;
+    font-weight: bold;
+}
+#buttonAccept, #buttonReject {
+    width: 60px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgb(89, 212, 81);
+    cursor: pointer;
+}
+#buttonReject {
+    background-color: red;
+}
+select {
+    height: 25px;
+    width: 150px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+#buttonAccept:hover {
+    background-color: rgb(89, 200, 81);
+}
+#buttonReject:hover {
+    background-color: #ff3333;
+}
+#pager a {
+    text-decoration: none;
+    padding: 2px;
+    border: 1px solid graytext;
+    margin: 3px;
+    color: background;
+    background-color: aliceblue;
+}
+#pager span {
+    text-decoration: none;
+    padding: 2px;
+    border: 1px solid graytext;
+    margin: 3px;
+    color: background;
+    background-color: antiquewhite;
+}
+#pager a:hover {
+    background-color: antiquewhite;
+}
+#pager {
+    margin: 10px;
+}
