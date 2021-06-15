@@ -17,19 +17,8 @@
         <title>Send Request</title>
     </head>
     <body>
-        <div class="option">
-            <div class="optionLeft">
-                <a id="fpt" href="time-keeping">AZPro</a>
-                <a id="timeReport" href="work-time-report">Work Time Report</a>
-                <a id="absent" href="absent-history">Absent History</a>
-                <a id="password" onclick="loadChangPass()">Change Password</a>
-            </div>
-
-            <div class="optionRight">
-                <a id="request" href="send-request">Send Request<img src="employeeView/icons/sendRequest.png"></a>
-                <a id="logout" href="logout">Logout<img src="employeeView/icons/logout.png"></a>
-            </div>
-        </div>
+        <%@include file="header.jsp" %>
+        
 
         <div class="request">
             <div class="title">

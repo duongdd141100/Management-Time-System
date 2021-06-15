@@ -23,17 +23,8 @@
                 alert('Slot is exist!')
             </script>
         </c:if>
-        <div class="option">
-            <div class="optionLeft">
-                <a id="fpt" href="manage-employee">Employees</a>
-                <a id="timeReport" href="time-work">Time Work</a>
-                <a id="password" onclick="loadChangPass()">Change Password</a>
-            </div>
-            <div class="optionRight">
-                <a id="request" href="view-request">View Request</a>
-                <a id="logout" href="logout">Logout<img src="employeeView/icons/logout.png"></a>
-            </div>
-        </div>
+        <%@include file="header.jsp" %>
+        
 
         <div id="detail">
             <div class="title">
