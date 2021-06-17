@@ -7,6 +7,7 @@ package dal;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import model.Account;
 
 /**
@@ -54,6 +55,38 @@ public class AccountDAO extends DBContext {
             statement = conn.prepareStatement(sql);
             statement.setString(1, password);
             statement.setString(2, email);
+            statement.execute();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    public ArrayList<Account> getAllAccount() {
+        ArrayList<Account> list = new ArrayList<>();
+        try {
+            String sql = "SELECT * FROM ACCOUNT";
+            statement = conn.prepareStatement(sql);
+            resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                Account account = new Account();
+                account.setUsername(resultSet.getString("username"));
+                account.setPassword(resultSet.getString("password"));
+                account.setGroupId(resultSet.getInt("GROUPID"));
+                list.add(account);
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return list;
+    }
+
+    public void insertAccount(String user, String pass, int groupId) {
+        try {
+            String sql = "insert into account values(?, ?, ?)";
+            statement = conn.prepareStatement(sql);
+            statement.setString(1, user);
+            statement.setString(2, pass);
+            statement.setInt(3, groupId);
             statement.execute();
         } catch (Exception e) {
             System.out.println(e);

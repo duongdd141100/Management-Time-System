@@ -1,0 +1,10 @@
+table tr th {
+    vertical-align: top;
+}
+.error {
+    text-align: left;
+    padding: 0px;
+    margin: 0px;
+    color: red;
+    display: none;
+}

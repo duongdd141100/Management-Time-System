@@ -5,6 +5,9 @@
  */
 package dal;
 
+import java.util.ArrayList;
+import model.Group;
+
 /**
  *
  * @author Do Duc Duong
@@ -24,6 +27,24 @@ public class GroupDAO extends DBContext{
             System.out.println(e);
         }
         return null;
+    }
+
+    public ArrayList<Group> getAllGroup() {
+        ArrayList<Group> list = new ArrayList<>();
+         try {
+            String sql = "SELECT * FROM [GROUP]";
+            statement = conn.prepareStatement(sql);
+            resultSet = statement.executeQuery();
+            while(resultSet.next()) {
+                Group g = new Group();
+                g.setId(resultSet.getInt("id"));
+                g.setName(resultSet.getString("name"));
+                list.add(g);
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return list;
     }
     
 }

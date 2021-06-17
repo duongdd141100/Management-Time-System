@@ -138,4 +138,19 @@ public class EmployeeDAO extends DBContext {
         }
     }
 
+    public void insertEmployee(String name, String gender, String dob, String email, int timeId, String user) {
+        try {
+            String sql = "insert into employee values (?, ?, ?, ?, ?, ?)";
+            statement = conn.prepareStatement(sql);
+            statement.setString(1, name);
+            statement.setString(2, gender);
+            statement.setString(3, dob);
+            statement.setString(4, email);
+            statement.setInt(5, timeId);
+            statement.setString(6, user);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
 }
