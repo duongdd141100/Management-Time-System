@@ -56,22 +56,36 @@ public class AddEmployeeController extends BaseAuthenticationController {
     protected void processPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         GroupDAO dbGroup = new GroupDAO();
         ArrayList<Group> listGroup = dbGroup.getAllGroup();
+        AccountDAO dbAcc = new AccountDAO();
         String name = request.getParameter("name");
         String user = request.getParameter("user");
         String email = request.getParameter("email");
         String dob = request.getParameter("dob");
         String pass = request.getParameter("pass");
-        String cfPass = request.getParameter("cfPass");
         String userType = request.getParameter("userType");
+        String gender = request.getParameter("gender");
         boolean isAdmin = true;
+        int groupId = -1;
+        for(int i = 0; i < listGroup.size(); i++) {
+            if(listGroup.get(i).getName().equals(userType)) {
+                groupId = listGroup.get(i).getId();
+            }
+        }
+        dbAcc.insertAccount(user, pass, groupId);
         if(!userType.equals("Admin")) {
             isAdmin = false;
         }
-        int timeId;
+        int timeId = -1;
         if(!isAdmin) {
             timeId = (Integer.parseInt(request.getParameter("timeId")));
-            
+            EmployeeDAO dbEmp = new EmployeeDAO();
+            dbEmp.insertEmployee(name, gender, dob, email, timeId, user);
+        } else {
+            AdminDAO dbAd = new AdminDAO();
+            dbAd.insertAdmin(name, gender, dob, email, user);
         }
+        
+        response.sendRedirect("add-employee");
     }
 
 }

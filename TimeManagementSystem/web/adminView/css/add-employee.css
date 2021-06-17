@@ -8,3 +8,11 @@ table tr th {
     color: red;
     display: none;
 }
+#add {
+    width: 70px;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: deepskyblue;
+}

@@ -148,6 +148,7 @@ public class EmployeeDAO extends DBContext {
             statement.setString(4, email);
             statement.setInt(5, timeId);
             statement.setString(6, user);
+            statement.execute();
         } catch (Exception e) {
             System.out.println(e);
         }

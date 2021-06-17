@@ -17,6 +17,12 @@
         <script src="employeeView/js/CheckConfirmPassword.js" type="text/javascript"></script>
     </head>
     <body>
+        <c:if test="${iserted != null}">
+            <script>
+                alert("Add Successfully")
+            </script>
+            
+        </c:if>
         <script>
             var listUser = []
             var listEmail = []
@@ -36,7 +42,7 @@
                 <h3>Information</h3>
             </div>
             <div id="table">
-                <form action="#" method="POST" id="formAdd">
+                <form action="add-employee" method="POST" id="formAdd">
                     <table>
                         <tr>
                             <th>Username:</th>
@@ -109,7 +115,7 @@
 
                     </table>
                     <div id="formButton">
-                        <input type='button' value="Save" id="submit" onclick="validationValue()">
+                        <input type='button' value="Add" id="add" onclick="validationValue()">
                     </div>
                 </form>
             </div>
@@ -128,7 +134,7 @@
         var gender = document.getElementsByName("gender")
         var dob = document.getElementById("dob").value
         var pass = document.getElementById("pass").value
-        var cfPass = document.getElementById("cfPass")
+        var cfPass = document.getElementById("cfPass").value
         if (user === "") {
             document.getElementById("error-empty-user").style.display = "block"
             isValid = false;
@@ -158,7 +164,7 @@
             isValid = false;
         } else {
             document.getElementById("error-empty-pass").style.display = "none"
-            if (cfPass === pass) {
+            if (cfPass == pass) {
                 document.getElementById("error-cf-pass").style.display = "none"
             } else {
                 document.getElementById("error-cf-pass").style.display = "block"
@@ -195,6 +201,7 @@
                 document.getElementById("error-exist-email").style.display = "none"
         }
         if(isValid) {
+            alert("Add Successfully!")
             document.getElementById("formAdd").submit()
         }
 

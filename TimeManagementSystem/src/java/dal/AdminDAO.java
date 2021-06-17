@@ -64,5 +64,20 @@ public class AdminDAO extends DBContext{
         }
         return list;
     }
+
+    public void insertAdmin(String name, String gender, String dob, String email, String user) {
+        try {
+            String sql = "insert into admin values (?, ?, ?, ?, ?)";
+            statement = conn.prepareStatement(sql);
+            statement.setString(1, name);
+            statement.setString(2, gender);
+            statement.setString(3, dob);
+            statement.setString(4, email);
+            statement.setString(5, user);
+            statement.execute();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
     
 }
