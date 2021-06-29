@@ -14,6 +14,7 @@
         <link href="employeeView/css/TimeKeppingHeader.css" rel="stylesheet" type="text/css"/>
         <link href="adminView/css/Edit.css" rel="stylesheet" type="text/css"/>
         <link href="adminView/css/add-employee.css" rel="stylesheet" type="text/css"/>
+        <script src="employeeView/js/LoadChagePassword.js" type="text/javascript"></script>
         <script src="employeeView/js/CheckConfirmPassword.js" type="text/javascript"></script>
     </head>
     <body>
@@ -49,6 +50,7 @@
                             <td><input type="text" class="inputText" name="user" id="user">
                                 <p class="error" id="error-exist-user">*Username is exist!</p>
                                 <p class="error" id="error-empty-user">*Username must not empty!</p>
+                                <p class="error" id="error-special-char-user">*Username must not has special char!</p>
                             </td>
                         </tr>
 
@@ -135,6 +137,19 @@
         var dob = document.getElementById("dob").value
         var pass = document.getElementById("pass").value
         var cfPass = document.getElementById("cfPass").value
+        var isErrSpecialChar = false
+        for(var i = 0; i < user.length; i++ ){
+            var asciiCode = user.charCodeAt(i)
+            if(asciiCode < 48 ||(asciiCode > 57 && asciiCode < 65) || (asciiCode > 90 && asciiCode < 97) || asciiCode > 122) {
+                document.getElementById("error-special-char-user").style.display = "block"
+                isValid = false;
+                isErrSpecialChar = true
+                break
+            }
+        }
+        if(!isErrSpecialChar) {
+            document.getElementById("error-special-char-user").style.display = "none"
+        }
         if (user === "") {
             document.getElementById("error-empty-user").style.display = "block"
             isValid = false;

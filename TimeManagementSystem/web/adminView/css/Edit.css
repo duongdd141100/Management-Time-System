@@ -57,7 +57,7 @@ input {
     border-radius: 5px;
     border: 1px solid #ccc;
 }
-#submit, #reset {
+#buttonSave, #buttonReset {
     width: 70px;
     height: 30px;
     cursor: pointer;
@@ -69,12 +69,19 @@ input {
     justify-content: space-evenly;
     margin-bottom: 10px;
 }
-#submit {
+#buttonSave {
     background-color: deepskyblue;
 }
-#reset {
+#buttonReset {
     background-color: antiquewhite;
 }
 select {
     width: 100%;
+}
+.error {
+    text-align: left;
+    padding: 0px;
+    margin: 0px;
+    color: red;
+    display: none;
 }

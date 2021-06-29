@@ -5,6 +5,7 @@
  */
 package adminController;
 
+import dal.AdminDAO;
 import dal.EmployeeDAO;
 import dal.WorkTimeDAO;
 import employeeCotroller.BaseAuthenticationController;
@@ -15,6 +16,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Admin;
 import model.Employee;
 import model.WorkTime;
 
@@ -39,11 +41,20 @@ public class EditEmployeeController extends BaseAuthenticationController {
         String username = request.getParameter("username");
         EmployeeDAO dbE = new EmployeeDAO();
         Employee e = dbE.getEmployee(username);
+        AdminDAO dbAd = new AdminDAO();
         WorkTimeDAO dbTime = new WorkTimeDAO();
         ArrayList<WorkTime> listTime = dbTime.getWorkTime();
         int timeId = dbE.getTimeId(username);
+        ArrayList<Employee> listEmp = dbE.getEmployee();
+        ArrayList<Admin> listAd = dbAd.getAllAdmin();
+        for(int i = 0; i < listEmp.size(); i++) {
+            if(listEmp.get(i).getUsername().equals(e.getUsername())) {
+                listEmp.remove(i);
+            }
+        }
         
-        
+        request.setAttribute("listAd", listAd);
+        request.setAttribute("listEmp", listEmp);
         request.setAttribute("timeId", timeId);
         request.setAttribute("listTime", listTime);
         request.setAttribute("employee", e);
