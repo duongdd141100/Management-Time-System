@@ -18,7 +18,7 @@
         <title>Work Time Employee</title>
     </head>
     <body>
-        <%@include file="header.jsp" %>
+        <%@include file="admin-header.jsp" %>
 
         <div id="detail">
             <div class="title">

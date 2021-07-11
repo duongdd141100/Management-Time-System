@@ -1,4 +1,5 @@
 body {
+    margin: 0;
     font-family: 'Roboto', sans-serif;
 }
 .changePassForm {
@@ -48,6 +49,7 @@ body {
     margin: 0 20%;
     border-bottom: none;
     background-color: #ccc;
+    padding-bottom: 1px;
 }
 h3 {
     padding-left: 2rem;

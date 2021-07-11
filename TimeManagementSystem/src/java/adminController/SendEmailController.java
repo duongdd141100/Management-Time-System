@@ -5,6 +5,7 @@
  */
 package adminController;
 
+import dal.AdminDAO;
 import dal.EmployeeDAO;
 import employeeCotroller.BaseAuthenticationController;
 import employeeCotroller.JavaMailUtil;
@@ -16,6 +17,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Account;
+import model.Admin;
 import model.Employee;
 
 /**
@@ -29,7 +32,11 @@ public class SendEmailController extends BaseAuthenticationController {
         String username = request.getParameter("username");
         EmployeeDAO dbE = new EmployeeDAO();
         Employee employee = dbE.getEmployee(username);
+        Account a = (Account) request.getSession().getAttribute("account");
+        AdminDAO dbAdmin = new AdminDAO();
+        Admin admin = dbAdmin.getAdmin(a.getUsername());
         
+        request.setAttribute("adminName", admin.getName());
         request.setAttribute("employee", employee);
         request.getRequestDispatcher("adminView/SendEmail.jsp").forward(request, response);
     }

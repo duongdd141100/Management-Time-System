@@ -79,5 +79,20 @@ public class AdminDAO extends DBContext{
             System.out.println(e);
         }
     }
+
+    public void update(String username, String name, String dob, String email, String gender) {
+        try {
+            String sql = "update admin set name = ?, dob = ?, email = ?, gender = ? where username = ?";
+            statement = conn.prepareStatement(sql);
+            statement.setString(1, name);
+            statement.setString(2, dob);
+            statement.setString(3, email);
+            statement.setString(4, gender);
+            statement.setString(5, username);
+            statement.execute();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
     
 }

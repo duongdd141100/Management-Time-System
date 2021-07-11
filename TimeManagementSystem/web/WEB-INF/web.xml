@@ -64,6 +64,10 @@
         <servlet-name>AddEmployeeController</servlet-name>
         <servlet-class>adminController.AddEmployeeController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EditProfileContrller</servlet-name>
+        <servlet-class>employeeCotroller.EditProfileContrller</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
         <url-pattern>/login</url-pattern>
@@ -127,6 +131,10 @@
     <servlet-mapping>
         <servlet-name>AddEmployeeController</servlet-name>
         <url-pattern>/add-employee</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditProfileContrller</servlet-name>
+        <url-pattern>/edit-profile</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

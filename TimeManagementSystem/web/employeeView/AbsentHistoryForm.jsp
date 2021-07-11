@@ -18,7 +18,7 @@
         <title>Absent History</title>
     </head>
     <body>
-        <%@include file="header.jsp" %>
+        <%@include file="emp-header.jsp" %>
         
 
         <div class="history">

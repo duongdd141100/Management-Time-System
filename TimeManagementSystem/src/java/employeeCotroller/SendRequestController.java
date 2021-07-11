@@ -6,6 +6,7 @@
 package employeeCotroller;
 
 import dal.AbsentDAO;
+import dal.EmployeeDAO;
 import dal.RequestDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -17,6 +18,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Account;
+import model.Employee;
 import model.Request;
 
 /**
@@ -55,10 +57,12 @@ public class SendRequestController extends BaseAuthenticationController {
     protected void processGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDAO dbRequest = new RequestDAO();
         ArrayList<Request> listRequest = dbRequest.getRequest();
-        
+        Account account = (Account) request.getSession().getAttribute("account");
+        EmployeeDAO dbEmployee = new EmployeeDAO();
+        Employee e = dbEmployee.getEmployee(account.getUsername());
+        request.setAttribute("employeeName", e.getName());
         
         request.setAttribute("isSubmit", false);
-        
         request.setAttribute("listRequest", listRequest);
         request.getRequestDispatcher("employeeView/SendRequestForm.jsp").forward(request, response);
     }

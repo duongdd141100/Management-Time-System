@@ -16,6 +16,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Account;
 import model.Admin;
 import model.Employee;
 import model.WorkTime;
@@ -52,7 +53,11 @@ public class EditEmployeeController extends BaseAuthenticationController {
                 listEmp.remove(i);
             }
         }
+        Account a = (Account) request.getSession().getAttribute("account");
+        AdminDAO dbAdmin = new AdminDAO();
+        Admin admin = dbAdmin.getAdmin(a.getUsername());
         
+        request.setAttribute("adminName", admin.getName());
         request.setAttribute("listAd", listAd);
         request.setAttribute("listEmp", listEmp);
         request.setAttribute("timeId", timeId);

@@ -42,8 +42,10 @@ public class AddEmployeeController extends BaseAuthenticationController {
         ArrayList<Employee> listEmp = dbEmp.getEmployee();
         ArrayList<Admin> listAdmin = dbAdmin.getAllAdmin();
         ArrayList<Group> listGroup = dbGroup.getAllGroup();
+        Account a = (Account) request.getSession().getAttribute("account");
+        Admin admin = dbAdmin.getAdmin(a.getUsername());
         
-        
+        request.setAttribute("adminName", admin.getName());
         request.setAttribute("listGroup", listGroup);
         request.setAttribute("listAcc", listAcc);
         request.setAttribute("listAd", listAdmin);

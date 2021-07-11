@@ -82,13 +82,16 @@ public class ViewRequestController extends BaseAuthenticationController {
             }
         }
 
-        Account admin = (Account) request.getSession().getAttribute("account");
-        String usernameAdmin = admin.getUsername();
+        Account account = (Account) request.getSession().getAttribute("account");
+        String usernameAdmin = account.getUsername();
         AdminDAO dbAdmin = new AdminDAO();
         ArrayList<Admin> listAdmin = dbAdmin.getAllAdmin();
         EmployeeDAO dbE = new EmployeeDAO();
         ArrayList<Employee> listEmployee = dbE.getEmployee();
-
+        Admin admin = dbAdmin.getAdmin(account.getUsername());
+        
+        request.setAttribute("adminName", admin.getName());
+        request.setAttribute("adminName", admin.getName());
         request.setAttribute("username", username);
         String url = request.getServletPath();
         request.setAttribute("url", url.substring(1, url.length()));

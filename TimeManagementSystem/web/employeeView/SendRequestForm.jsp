@@ -17,7 +17,7 @@
         <title>Send Request</title>
     </head>
     <body>
-        <%@include file="header.jsp" %>
+        <%@include file="emp-header.jsp" %>
         
 
         <div class="request">

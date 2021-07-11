@@ -45,8 +45,9 @@ public class ViewWorkTimeEmployee extends BaseAuthenticationController {
         Employee e = dbE.getEmployee(username);
         AdminDAO dbAdmin = new AdminDAO();
         ArrayList<Admin> listAdmin = dbAdmin.getAllAdmin();
-        
-        
+        Admin admin = dbAdmin.getAdmin(a.getUsername());
+      
+        request.setAttribute("adminName", admin.getName());  
         String url = request.getServletPath();
         request.setAttribute("listAdmin", listAdmin);
         request.setAttribute("url", url.substring(1, url.length()));

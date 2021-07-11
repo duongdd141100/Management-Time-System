@@ -93,4 +93,23 @@ public class AccountDAO extends DBContext {
         }
     }
 
+    public boolean isAdmin(String username) {
+        try {
+            String sql = "select [group].Name from [group] inner join account on account.GROUPID = [GROUP].ID where username = ?";
+            statement = conn.prepareStatement(sql);
+            statement.setString(1, username);
+            resultSet = statement.executeQuery();
+            if(resultSet.next()) {
+                if(resultSet.getString("name").equals("Admin")) {
+                    return true;
+                }  else {
+                    return false;
+                }
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return false;
+    }
+
 }

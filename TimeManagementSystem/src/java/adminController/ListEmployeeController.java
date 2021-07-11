@@ -5,6 +5,7 @@
  */
 package adminController;
 
+import dal.AdminDAO;
 import dal.EmployeeDAO;
 import employeeCotroller.BaseAuthenticationController;
 import java.io.IOException;
@@ -14,6 +15,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Account;
+import model.Admin;
 import model.Employee;
 
 /**
@@ -36,7 +39,11 @@ public class ListEmployeeController extends BaseAuthenticationController {
     protected void processGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         EmployeeDAO dbE = new EmployeeDAO();
         ArrayList<Employee> listE = dbE.getEmployee();
+        Account a = (Account) request.getSession().getAttribute("account");
+        AdminDAO dbAdmin = new AdminDAO();
+        Admin admin = dbAdmin.getAdmin(a.getUsername());
         
+        request.setAttribute("adminName", admin.getName());
         request.setAttribute("listEmployee", listE);
         request.getRequestDispatcher("adminView/List.jsp").forward(request, response);
     }

@@ -37,7 +37,7 @@
             listEmail.push('${l.email}')
             </c:forEach>
         </script>
-        <%@include file="header.jsp" %>
+        <%@include file="admin-header.jsp" %>
         <div id="detail">
             <div class="title">
                 <h3>Information</h3>

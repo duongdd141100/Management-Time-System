@@ -66,6 +66,8 @@ public class TimeKeepingController extends BaseAuthenticationController {
             inWorkingTime = true;
         }
         
+        request.setAttribute("timeStart", e.getFrom());
+        request.setAttribute("timeFinish", e.getTo());
         request.setAttribute("employeeName", e.getName());
         request.setAttribute("inWorkingTime", inWorkingTime);
         request.getRequestDispatcher("employeeView/TimeKeepingForm.jsp").forward(request, response);

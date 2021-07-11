@@ -23,7 +23,7 @@
                 alert('Slot is exist!')
             </script>
         </c:if>
-        <%@include file="header.jsp" %>
+        <%@include file="admin-header.jsp" %>
         
 
         <div id="detail">

@@ -6,6 +6,7 @@
 package employeeCotroller;
 
 import dal.AbsentDAO;
+import dal.EmployeeDAO;
 import dal.RequestDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -19,6 +20,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Absent;
 import model.Account;
+import model.Employee;
 import model.Request;
 
 /**
@@ -170,6 +172,10 @@ public class AbsentHistoryController extends BaseAuthenticationController {
         }
         String url = request.getServletPath();
         url = url.substring(1, url.length());
+        Account account = (Account) request.getSession().getAttribute("account");
+        EmployeeDAO dbEmployee = new EmployeeDAO();
+        Employee e = dbEmployee.getEmployee(account.getUsername());
+        request.setAttribute("employeeName", e.getName());
         request.setAttribute("url", url);
         request.setAttribute("pageIndex", pageIndex);
         request.setAttribute("totalPage", totalPage);

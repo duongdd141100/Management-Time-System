@@ -18,7 +18,7 @@
         <title>View Request</title>
     </head>
     <body>
-        <%@include file="header.jsp" %>
+        <%@include file="admin-header.jsp" %>
 
         <div id="report">
             <div id="title">

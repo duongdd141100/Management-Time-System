@@ -17,14 +17,14 @@
         <title>Time Keeping</title>
     </head>
     <body>
-        <%@include file="header.jsp" %>
+        <%@include file="emp-header.jsp" %>
         
         <div>
             <c:if test="${requestScope.inWorkingTime}">
-                <h4 id="inWorkingTime">Note: You are in Work Time</h4>
+                <h4 id="inWorkingTime">Note: You are in Work Time (Your Work Time: ${timeStart} - ${timeFinish})</h4>
             </c:if>
             <c:if test="${!requestScope.inWorkingTime}">
-                <h4 id="notInWorkingTime">Note: You are not in Work Time</h4>
+                <h4 id="notInWorkingTime">Note: You are not in Work Time (Your Work Time: ${timeStart} - ${timeFinish})</h4>
             </c:if>
             <hr>
         </div>

@@ -4,6 +4,7 @@
     Author     : Do Duc Duong
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -21,8 +22,14 @@
             </div>
 
             <div class="optionRight">
-                <a id="request" href="view-request">View Request</a>
-                <a id="logout" href="logout">Logout<img src="employeeView/icons/logout.png"></a>
+                <a id="request" href="view-request">View Request<img src="employeeView/icons/sendRequest.png"></a>
+                <div id="username">
+                    <button id="buttonUsername">${adminName}</button>
+                    <div id="username-menu">
+                        <a href="edit-profile">Edit Profile</a>
+                        <a href="logout">Logout<img src="employeeView/icons/logout.png"></a>
+                    </div>
+                </div>
             </div>
         </div>
     </body>

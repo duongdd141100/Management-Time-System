@@ -5,6 +5,7 @@
  */
 package employeeCotroller;
 
+import dal.EmployeeDAO;
 import dal.WorkTimeReportDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -18,6 +19,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Account;
+import model.Employee;
 import model.WorkTimeReport;
 import org.apache.jasper.tagplugins.jstl.ForEach;
 
@@ -38,14 +40,6 @@ public class WorkTimeReportController extends BaseAuthenticationController {
      */
     @Override
     protected void processGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        Cookie[] c = request.getCookies();
-//        for(int i = 0; i < c.length; i++) {
-//            if(c[i].getName().equals("monthFind") || c[i].getName().equals("dateFrom") || c[i].getName().equals("dateTo")) {
-//                c[i].setValue("");
-//                c[i].setMaxAge(0);
-//                response.addCookie(c[i]);
-//            }
-//        }
         int pageIndex = 1;
         if (request.getParameter("page") != null) {
             pageIndex = Integer.parseInt(request.getParameter("page"));
@@ -195,6 +189,9 @@ public class WorkTimeReportController extends BaseAuthenticationController {
         
         String url = request.getServletPath();
         url = url.substring(1, url.length());
+        EmployeeDAO dbEmployee = new EmployeeDAO();
+        Employee e = dbEmployee.getEmployee(account.getUsername());
+        request.setAttribute("employeeName", e.getName());
         request.setAttribute("url", url);
         request.setAttribute("timeAccepted", housAccepted + ":" + minsAccepted + ":" + secsAccepted);
         request.setAttribute("timeNotAccepted", housNotAccepted + ":" + minsNotAccepted + ":" + secsNotAccepted);

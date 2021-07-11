@@ -17,7 +17,7 @@
         <title>Edit Employee</title>
     </head>
     <body>
-        <%@include file="header.jsp" %>
+        <%@include file="admin-header.jsp" %>
         
 
         <div id="detail">

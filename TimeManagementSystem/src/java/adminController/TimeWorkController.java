@@ -5,6 +5,7 @@
  */
 package adminController;
 
+import dal.AdminDAO;
 import dal.WorkTimeDAO;
 import employeeCotroller.BaseAuthenticationController;
 import java.io.IOException;
@@ -14,6 +15,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Account;
+import model.Admin;
 import model.WorkTime;
 
 /**
@@ -26,7 +29,11 @@ public class TimeWorkController extends BaseAuthenticationController {
     protected void processGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         WorkTimeDAO dbWorkTime = new WorkTimeDAO();
         ArrayList<WorkTime> listWorkTime = dbWorkTime.getWorkTime();
-
+        Account a = (Account) request.getSession().getAttribute("account");
+        AdminDAO dbAdmin = new AdminDAO();
+        Admin admin = dbAdmin.getAdmin(a.getUsername());
+        
+        request.setAttribute("adminName", admin.getName());
         request.setAttribute("listWorkTime", listWorkTime);
         request.getRequestDispatcher("adminView/WorkTime.jsp").forward(request, response);
     }
