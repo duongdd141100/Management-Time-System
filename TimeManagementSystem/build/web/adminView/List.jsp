@@ -10,8 +10,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link href="employeeView/css/TimeKeppingHeader.css" rel="stylesheet" type="text/css"/>
         <link href="adminView/css/List.css" rel="stylesheet" type="text/css"/>
+        <link href="employeeView/css/TimeKeppingHeader.css" rel="stylesheet" type="text/css"/>
+        
         <script src="employeeView/js/LoadChagePassword.js" type="text/javascript"></script>
         <script src="employeeView/js/CheckConfirmPassword.js" type="text/javascript"></script>
         

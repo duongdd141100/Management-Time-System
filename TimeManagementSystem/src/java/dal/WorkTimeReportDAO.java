@@ -154,8 +154,9 @@ public class WorkTimeReportDAO extends DBContext {
     public int getTotalPage(String username, int pageSize) {
         try {
             String sql = "SELECT COUNT(*) FROM WORKTIMEREPORT \n"
-                    + "WHERE USERNAME = 'duongdd'";
+                    + "WHERE USERNAME = ?";
             statement = conn.prepareStatement(sql);
+            statement.setString(1, username);
             resultSet = statement.executeQuery();
             if (resultSet.next()) {
                 int totalReport = resultSet.getInt(1);

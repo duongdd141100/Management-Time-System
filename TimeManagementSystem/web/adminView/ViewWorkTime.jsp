@@ -21,8 +21,27 @@
         <%@include file="admin-header.jsp" %>
 
         <div id="detail">
+            <div id="seach">
+                <form action="view-work-time-employee" method="GET" id="dateFind">
+                    <label for="dateFrom">From</label>
+                    <input class="inputDate" type="date" id="dateFrom" name="dateFrom">
+                    <label for="dateTo">To</label>
+                    <input class="inputDate" type="date" id="dateTo" name="dateTo">
+                    <input type="hidden" name="username" value="${username}">
+                    <input type="submit" value="Find" id="buttonFind">
+                </form>
+                <div id="monthFind">
+                    <a href="view-work-time-employee?thisMonth=true&username=${username}">This Month</a>
+                    <a href="view-work-time-employee?thisMonth=false&username=${username}">Last Month</a>
+                </div>
+            </div>
             <div class="title">
                 <h3>Report: ${employee.name}</h3>
+                <div class="parameters">
+                    <span id="timeAccepted">Time Accepted: ${requestScope.timeAccepted}</span>
+                    <span id="timNotAccepted">Time Not Accepted Yet: ${requestScope.timeNotAccepted}</span>
+                    <span id="timeReject">Time Reject: ${requestScope.timeReject}</span>
+                </div>    
             </div>
             <div id="table">
                 <table>

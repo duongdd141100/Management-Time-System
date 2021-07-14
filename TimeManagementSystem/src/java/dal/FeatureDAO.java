@@ -43,4 +43,21 @@ public class FeatureDAO extends DBContext {
         return list;
     }
 
+    public boolean isExistURL(String url) {
+        try {
+            String sql = "select * from features where url = ?";
+            statement = conn.prepareStatement(sql);
+            statement.setString(1, url);
+            resultSet = statement.executeQuery();
+            if(resultSet.next()) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return false;
+    }
+
 }
